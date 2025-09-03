@@ -1,0 +1,62 @@
+# Build results
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains IDE
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Microsoft Visual Studio cache/options directory
+*.dbmdl
+*.bak
+*.backup
+*.tmp
+
+# Generated files
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Other
+[Tt]est[Rr]esult*/
+*.coverage
+*.coveragexml
+
+# Dotnet CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignore local secrets
+secrets.json
+appsettings.Development.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
