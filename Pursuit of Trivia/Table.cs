@@ -9,10 +9,14 @@ namespace Pursuit_of_Trivia
     internal class Table
     {
         public List<Player> Players { get; private set; }
-        public Table()
+
+        public List<Deck> QuestionDecks { get; private set; }
+
+
+        public Table(List<Deck> questionDecks)
         {
             Players = new List<Player>();
-        // @TODO generate questions, add question cards (class) and answers, card deck per category?
+            QuestionDecks = questionDecks;
         }
 
         public void AddPlayerToGame(Player player)

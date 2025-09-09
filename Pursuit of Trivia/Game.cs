@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pursuit_of_Trivia
 {
+    /// <summary>
+    /// Class representing the overall game state, including setting up players (and bots) and initializing the game table with the master question deck.
+    /// </summary>
     internal class Game
     {
         public Table GameTable { get; set; }
@@ -16,9 +16,9 @@ namespace Pursuit_of_Trivia
 
         public Game() 
         {
-            GameTable = new Table();
+            GameTable = new Table(new Deck(GetAllQuestionCategories()));
         }
-        public void Setup()
+        public void SetupPlayers()
         {
             Console.Clear();
 
@@ -33,6 +33,11 @@ namespace Pursuit_of_Trivia
             
             GameTable.AddPlayerToGame(currentPlayer);
             GameTable.AddBotToGame();
+        }
+
+        private List<Category> GetAllQuestionCategories()
+        {
+            return Enum.GetValues(typeof(Category)).Cast<Category>().ToList();
         }
     }
 }
