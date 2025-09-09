@@ -25,7 +25,7 @@ namespace Pursuit_of_Trivia
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("-- Welcome to Pursuit of Trivia! --");
             Console.WriteLine("-----------------------------------");
-            Console.WriteLine("Press any key to start the game...");
+            Console.WriteLine("Press any key to enter game setup...");
             Console.ReadKey(true);
         }
     }

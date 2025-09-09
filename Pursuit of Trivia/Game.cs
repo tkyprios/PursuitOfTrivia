@@ -21,13 +21,18 @@ namespace Pursuit_of_Trivia
         public void Setup()
         {
             Console.Clear();
+
+            Console.WriteLine("Let's get you set up!");
+
             Console.WriteLine("What would you like your username to be?");
             string playerUsername = Console.ReadLine();
 
             currentPlayer = new Player(playerUsername);
             Console.WriteLine($"Welcome, {currentPlayer.Name}! Press any key to start the game...");
             Console.ReadKey(true);
-            Console.ReadLine();
+            
+            GameTable.AddPlayerToGame(currentPlayer);
+            GameTable.AddBotToGame();
         }
     }
 }
