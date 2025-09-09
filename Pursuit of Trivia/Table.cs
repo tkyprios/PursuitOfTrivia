@@ -10,13 +10,13 @@ namespace Pursuit_of_Trivia
     {
         public List<Player> Players { get; private set; }
 
-        public List<Deck> QuestionDecks { get; private set; }
+        public Deck MasterQuestionDeck { get; private set; }
 
 
-        public Table(List<Deck> questionDecks)
+        public Table(Deck masterQuestionDeck)
         {
             Players = new List<Player>();
-            QuestionDecks = questionDecks;
+            MasterQuestionDeck = masterQuestionDeck;
         }
 
         public void AddPlayerToGame(Player player)
