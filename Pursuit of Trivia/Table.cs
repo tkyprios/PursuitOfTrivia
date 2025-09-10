@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pursuit_of_Trivia
 {
+    /// <summary>
+    /// Class that represents the game table, managing players and the master question deck.
+    /// </summary>
     internal class Table
     {
         public List<Player> Players { get; private set; }

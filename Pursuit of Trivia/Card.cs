@@ -11,18 +11,26 @@ namespace Pursuit_of_Trivia
     /// </summary>
     internal class Card
     {
-        public Category QuestionCategory { get; private set; }
-        public string QuestionText { get; private set; }
-        public List<String> Choices { get; private set; }
+        public Category QuestionCategory { get; }
+        public string QuestionText { get; }
+        public IReadOnlyList<String> Choices { get; } // make Choices read-only to prevent modification after initialization
 
-        private string CorrectAnswer { get; set; }
+        private string CorrectAnswer { get; }
         public Card(Category questionCategory, string questionText, List<String> choices, string correctAnswer)
         {
             QuestionCategory = questionCategory;
             QuestionText = questionText;
-            Choices = choices;
+            Choices = choices.ToList(); // Create a defensive copy of the provided list to ensure immutability (can't be changed)
             CorrectAnswer = correctAnswer;
 
         }
+
+        /// <summary>
+        /// Method to check if the provided answer is correct - uses lambda expression for simplicity of method
+        /// </summary>
+        /// <param name="answer">Provided answer to check against the correct answer. </param>
+        /// <returns></returns>
+        public bool CheckAnswer(string answer) =>
+            string.Equals(answer, CorrectAnswer, StringComparison.OrdinalIgnoreCase);
     }
 }

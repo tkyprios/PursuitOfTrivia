@@ -13,11 +13,26 @@ namespace Pursuit_of_Trivia
 
         public Player currentPlayer { get; set; }
 
-
+        /// <summary>
+        /// Constructor for the Game class, initializes the game table with a master deck of questions covering all categories.
+        /// </summary>
         public Game() 
         {
             GameTable = new Table(new Deck(GetAllQuestionCategories()));
         }
+
+        /// <summary>
+        /// Retrieves a list of all available question categories.
+        /// </summary>
+        /// <remarks>The method returns all values of the <see cref="Category"/> enumeration as a list. 
+        /// <returns>A list of all categories defined in the <see cref="Category"/> enumeration.</returns>
+        private List<Category> GetAllQuestionCategories() => 
+            Enum.GetValues(typeof(Category)).Cast<Category>().ToList();
+
+        /// <summary>
+        /// Sets up the players for the game by prompting the user for their username and initializing the current
+        /// player and a bot player.
+        /// </summary>
         public void SetupPlayers()
         {
             Console.Clear();
@@ -35,9 +50,6 @@ namespace Pursuit_of_Trivia
             GameTable.AddBotToGame();
         }
 
-        private List<Category> GetAllQuestionCategories()
-        {
-            return Enum.GetValues(typeof(Category)).Cast<Category>().ToList();
-        }
+
     }
 }

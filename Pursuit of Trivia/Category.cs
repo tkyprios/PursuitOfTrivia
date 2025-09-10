@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pursuit_of_Trivia
 {
+
+    /// <summary>
+    /// Enumeration representing the different categories of trivia questions available in the game. Star Wars themed.
+    /// </summary>
     public enum Category
     {
         Characters = 1,
